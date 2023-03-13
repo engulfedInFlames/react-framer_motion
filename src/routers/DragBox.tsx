@@ -1,8 +1,14 @@
-import { motion } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 import styled from "styled-components";
 
-const Canvas = styled.div`
+const Canvas = styled(motion.div)`
   overflow: hidden;
   width: 600px;
   height: 600px;
@@ -27,14 +33,33 @@ const Box = styled(motion.div)`
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 `;
 
-const dragBoxVar = {};
-
 function DragBox() {
   const canvasRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0); // React의 State로 저장되지 않는다. 즉, 리렌더링 되지 않는다.
+  const { scrollY, scrollYProgress } = useScroll();
+  const rotateZValue = useTransform(x, [-300, 300], [-360, 360]);
+  const gradientValue = useTransform(
+    x,
+    [-300, 0, 300],
+    [
+      "linear-gradient(135deg, #40E0D0, rgb(238, 178, 0))",
+      "linear-gradient(135deg, rgb(238, 178, 0), #FF8C00)",
+      "linear-gradient(135deg, #FF8C00, #FF0080)",
+    ]
+  );
+  const scrollYValue = useTransform(scrollYProgress, [0, 1], [1, 2]);
+  // useMotionValueEvent(x, "change", (el) => console.log(el)); // useEffect(()=>{...code}, [x])을 대체한다.
+  // useMotionValueEvent(gradientValue, "change", (el) => console.log(el));
+  useMotionValueEvent(scrollYProgress, "change", (el) => console.log(el));
+
   return (
     <>
-      <Canvas ref={canvasRef}>
-        <Box drag dragConstraints={canvasRef}></Box>
+      <Canvas ref={canvasRef} style={{ background: gradientValue }}>
+        <Box
+          style={{ x, rotateZ: rotateZValue, scale: scrollYValue }}
+          drag
+          dragSnapToOrigin
+        ></Box>
       </Canvas>
     </>
   );

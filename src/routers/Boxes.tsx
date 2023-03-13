@@ -6,6 +6,7 @@ const Main = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: rows;
+  gap: 50px;
 `;
 
 const Box = styled(motion.div)`
@@ -106,7 +107,6 @@ function Boxes() {
           dragConstraints={{}}
           whileDrag="drag"
         ></Box>
-        <Box variants={whileBoxVars} whileHover={{ opacity: 0.5 }}></Box>
       </Main>
     </>
   );
