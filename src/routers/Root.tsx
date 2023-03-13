@@ -66,6 +66,7 @@ function Root() {
       <Nav>
         <Link to="boxes">Boxes</Link>
         <Link to="drag-box">Drag Box</Link>
+        <Link to="svg">SVG</Link>
       </Nav>
 
       <Outlet />
