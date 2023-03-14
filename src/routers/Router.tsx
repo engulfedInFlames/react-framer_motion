@@ -10,7 +10,7 @@ import Final from "./components/Final";
 
 const myRouter = createBrowserRouter([
   {
-    path: "/",
+    path: `${process.env.PUBLIC_URL}/`,
     element: <Root />,
     children: [
       { path: "boxes", element: <Boxes /> },
