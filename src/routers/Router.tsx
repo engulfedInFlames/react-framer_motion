@@ -14,29 +14,29 @@ const myRouter = createBrowserRouter(
       path: "/",
       element: <Root />,
       children: [
-        { path: "boxes", element: <Boxes /> },
+        { path: `${process.env.PUBLIC_URL}/boxes`, element: <Boxes /> },
         {
-          path: "drag-box",
+          path: `${process.env.PUBLIC_URL}/drag-box`,
           element: <BoxForDrag />,
         },
         {
-          path: "svg",
+          path: `${process.env.PUBLIC_URL}/svg`,
           element: <SVG />,
         },
         {
-          path: "presence1",
+          path: `${process.env.PUBLIC_URL}/presence1`,
           element: <Presence1 />,
         },
         {
-          path: "presence2",
+          path: `${process.env.PUBLIC_URL}/presence2`,
           element: <Presence2 />,
         },
         {
-          path: "layout",
+          path: `${process.env.PUBLIC_URL}/layout`,
           element: <Layout />,
         },
         {
-          path: "final",
+          path: `${process.env.PUBLIC_URL}/final`,
           element: <Final />,
         },
       ],

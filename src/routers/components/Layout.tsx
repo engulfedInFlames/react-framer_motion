@@ -56,8 +56,6 @@ const Btn = styled.button`
   border-radius: 50%;
 `;
 
-const boxPresenceVars = {};
-
 function Layout() {
   const [clicked, setClicked] = useState(false);
   const onClick = () => {

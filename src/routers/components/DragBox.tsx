@@ -36,7 +36,7 @@ const Box = styled(motion.div)`
 function DragBox() {
   const canvasRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0); // React의 State로 저장되지 않는다. 즉, 리렌더링 되지 않는다.
-  const { scrollY, scrollYProgress } = useScroll();
+  const { scrollYProgress } = useScroll();
   const rotateZValue = useTransform(x, [-300, 300], [-360, 360]);
   const gradientValue = useTransform(
     x,
