@@ -38,21 +38,24 @@ const Title = styled.span`
 `;
 
 const Nav = styled.nav`
-  height: 60px;
-  display: flex;
+  width: 420px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
+  gap: 8px;
   color: #d05a2a;
   font-size: 24px;
+  margin: 0 auto;
   margin-bottom: 32px;
   a {
     width: 140px;
     text-align: center;
     background-color: white;
-    border-radius: 12px;
-    padding: 4px 6px;
-    margin: 0 4px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 16px;
+    padding: 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
 `;
 
@@ -67,6 +70,9 @@ function Root() {
         <Link to="boxes">Boxes</Link>
         <Link to="drag-box">Drag Box</Link>
         <Link to="svg">SVG</Link>
+        <Link to="presence">Presence</Link>
+        <Link to="/">Empty</Link>
+        <Link to="/">Empty</Link>
       </Nav>
 
       <Outlet />

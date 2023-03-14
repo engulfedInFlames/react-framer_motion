@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Boxes from "./Boxes";
 import BoxForDrag from "./DragBox";
+import Presence from "./Presence";
 import Root from "./Root";
 import SVG from "./SVG";
 
@@ -17,6 +18,10 @@ const myRouter = createBrowserRouter([
       {
         path: "svg",
         element: <SVG />,
+      },
+      {
+        path: "presence",
+        element: <Presence />,
       },
     ],
   },
