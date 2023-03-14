@@ -8,36 +8,29 @@ const Wrapper = styled(motion.div)`
   height: 600px;
   display: flex;
   flex-direction: column;
-  flex-direction: center;
   justify-content: center;
   align-items: center;
-  border-radius: 2%;
   margin: 0 auto;
 `;
 
 const Box = styled(motion.div)`
   width: 200px;
   height: 200px;
-  justify-self: center;
-  align-self: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   background-color: #f1f2f6;
   border-radius: 25%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 `;
 
 const Btn = styled.button`
+  width: 100px;
+  height: 100px;
   position: absolute;
   bottom: 0;
   font-size: 20px;
   color: #d05a2a;
   background-color: white;
-  padding: 6px 20px;
   border: none;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 50%;
 `;
 
 const boxPresenceVars = {
@@ -56,7 +49,7 @@ const boxPresenceVars = {
   },
 };
 
-function Presence() {
+function Presence1() {
   const [display, setDisplay] = useState(false);
   const onClick = () => {
     setDisplay((prev) => !prev);
@@ -83,4 +76,4 @@ function Presence() {
   );
 }
 
-export default Presence;
+export default Presence1;

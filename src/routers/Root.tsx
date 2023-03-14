@@ -11,6 +11,18 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color:inherit;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      &:active {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      }
+  }
+  button {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      &:active {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      }
   }
   body {
     min-height:200vh;
@@ -52,10 +64,8 @@ const Nav = styled.nav`
     width: 140px;
     text-align: center;
     background-color: white;
-    border-radius: 16px;
+    border-radius: 8px;
     padding: 6px 6px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-      rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
 `;
 
@@ -70,9 +80,9 @@ function Root() {
         <Link to="boxes">Boxes</Link>
         <Link to="drag-box">Drag Box</Link>
         <Link to="svg">SVG</Link>
-        <Link to="presence">Presence</Link>
-        <Link to="/">Empty</Link>
-        <Link to="/">Empty</Link>
+        <Link to="presence1">Presence 1</Link>
+        <Link to="presence2">Presence 2</Link>
+        <Link to="Layout">Layout</Link>
       </Nav>
 
       <Outlet />
