@@ -6,6 +6,7 @@ import Presence1 from "./components/Presence1";
 import Presence2 from "./components/Presence2";
 import SVG from "./components/SVG";
 import Layout from "./components/Layout";
+import Final from "./components/Final";
 
 const myRouter = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const myRouter = createBrowserRouter([
       {
         path: "layout",
         element: <Layout />,
+      },
+      {
+        path: "final",
+        element: <Final />,
       },
     ],
   },
