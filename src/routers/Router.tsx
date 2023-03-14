@@ -8,38 +8,41 @@ import SVG from "./components/SVG";
 import Layout from "./components/Layout";
 import Final from "./components/Final";
 
-const myRouter = createBrowserRouter([
-  {
-    path: `${process.env.PUBLIC_URL}/`,
-    element: <Root />,
-    children: [
-      { path: "boxes", element: <Boxes /> },
-      {
-        path: "drag-box",
-        element: <BoxForDrag />,
-      },
-      {
-        path: "svg",
-        element: <SVG />,
-      },
-      {
-        path: "presence1",
-        element: <Presence1 />,
-      },
-      {
-        path: "presence2",
-        element: <Presence2 />,
-      },
-      {
-        path: "layout",
-        element: <Layout />,
-      },
-      {
-        path: "final",
-        element: <Final />,
-      },
-    ],
-  },
-]);
+const myRouter = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        { path: "boxes", element: <Boxes /> },
+        {
+          path: "drag-box",
+          element: <BoxForDrag />,
+        },
+        {
+          path: "svg",
+          element: <SVG />,
+        },
+        {
+          path: "presence1",
+          element: <Presence1 />,
+        },
+        {
+          path: "presence2",
+          element: <Presence2 />,
+        },
+        {
+          path: "layout",
+          element: <Layout />,
+        },
+        {
+          path: "final",
+          element: <Final />,
+        },
+      ],
+    },
+  ],
+  { basename: `${process.env.PUBLIC_URL}/` }
+);
 
 export default myRouter;
